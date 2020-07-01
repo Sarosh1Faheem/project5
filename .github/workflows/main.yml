@@ -18,8 +18,8 @@ jobs:
               with:
                 cmd: install 
             - name: Creating build
-              run: yarn build
+              run: npm build
             - name: Installing Surge
               run: npm install -g surge
             - name: Deploying via surge
-              run: surge ./build sarosh-faheem-bootcamp-class8.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
+              run: surge ./build sarosh-faheem-bootcamp-class8.surge.sh/ --token $ {{ secrets.SURGE_TOKEN }}

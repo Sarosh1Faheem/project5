@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './App.css'
-import './index.js'
 
 function App(){
 
@@ -26,7 +24,8 @@ function App(){
 
   return(
     <div className='App'>
-      <h1>You are Watching My All Repositories</h1>
+      <h1>Hello!, Sarosh.</h1>
+      <h3>You are Watching All My Repositories</h3>
         <ul>
           {Repos.map((repoObj, ind) => 
             {return(<li key={ind}>{repoObj.name}</li>)}

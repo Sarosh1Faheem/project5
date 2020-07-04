@@ -1,0 +1,25 @@
+name: BootCamp-Class8
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        name: Deploying to surge
+        steps:
+            - uses: actions/checkout@v2
+        
+            - name: Install Node.js
+              uses: actions/setup-node@v2-beta
+              with:
+                node-version: 12
+            - name: Prepare for Yarn Installation
+              uses: Borales/actions-yarn@v2.1.0
+              with:
+                cmd: install 
+            - name: Creating build
+              run: npm build
+            - name: Installing Surge
+              run: npm install -g surge
+            - name: Deploying via surge
+              run: surge ./build saroshfaheem-bootcamp-class8.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
